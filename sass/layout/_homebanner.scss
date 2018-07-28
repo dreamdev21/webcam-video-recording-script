@@ -1,0 +1,83 @@
+.mainbanner {
+  float:left;
+  width:100%;
+  text-align:center;
+  position:relative;
+  .mainbanner-bg {
+    width:100%;
+    background:url(../images/main-banner-pattern.png) no-repeat;
+    background-size:cover;
+    position:absolute;
+    top:0;
+    z-index:-1;
+    @media screen and (min-width:1200px) {
+      min-height:770px;
+    }
+    @media screen and (max-width:550px) {
+      min-height:450px;
+    }
+  }
+  @include respond-to(pad-min) {
+    padding-top:66px;
+  }
+  @include respond-to(mediumlarsm) {
+    padding-top:40px;
+  }
+  .f_20_uc_g_r {
+    display:block;
+  }
+  .logo-banner {
+    display:block;
+    @include respond-to(wide-max) {
+      img {
+        max-width:250px;
+      }
+    }
+    @include respond-to(mediumlarsm) {
+      img {
+        max-width:200px;
+      }
+    }
+    @include respond-to(handhelds) {
+      img {
+        max-width:160px;
+      }
+    }
+  }
+  .f_50_gr_m {
+    display:block;
+    max-width:650px;
+    margin:14px auto;
+    @include respond-to(mediumlarsm) {
+      font-size:6vw;
+    }
+  }
+  .f_18_dg_r {
+    max-width:665px;
+    margin:0 auto;
+    display:block;
+  }
+  .l_f_20_b_r {
+    margin-top:40px;
+    @include i_b;
+    .icons-sheet {
+      margin-right:10px;
+      margin-top:-1px;
+    }
+    @include respond-to(handhelds) {
+      margin-top:20px;
+    }
+  }
+  .preview {
+    margin-top:96px;
+    img {
+      max-width:95%;
+    }
+    @include respond-to(mediumlarsm) {
+      margin-top:56px;
+    }
+    @include respond-to(handhelds) {
+      margin-top:36px;
+    }
+  }
+}

@@ -1,0 +1,171 @@
+.sidePanel {
+	background: #FFFFFF;
+	box-shadow: 4px 11px 14px 0 rgba(0,0,0,0.09);
+	width:220px;
+	position:fixed;
+	top:56px;
+	z-index:2;
+	height:calc(100% - 56px);
+	padding:30px 0;
+	overflow-y:auto;
+	@media screen and (max-width:1279px) {
+		width:180px;
+	}
+
+	@media screen and (max-width:991px) {
+		width:220px;
+	}
+	@media screen and (max-width:767px) {
+		z-index:99;
+		transform:translate3d(-120%,0,0);
+		top:0;
+		height:100%;
+	}
+	.panelLinks {
+		padding:0 16px;
+		ul {
+			margin-bottom:0;
+		}
+		li {
+			a {
+				display:block;
+				&.collapsed {
+					.icons.arrow-down {
+						transform:rotate(-90deg);
+					}
+				}
+				.icons {
+					&.arrow-down {
+						float:right;
+						margin-top:11px;
+						transition:all .3s;
+
+						@media screen and (max-width:550px) {
+							margin-top:8px;
+						}
+					}
+				}
+			}
+
+		}
+		.icons {
+			margin-right:5px;
+		}
+		span {
+			font-size:14px;
+			font-weight:bold;
+			color:#444444;
+			letter-spacing: 1px;
+			line-height: 1;
+			transition: all .4s;
+			@include dib;
+			@include vam;
+			width:calc(100% - 50px);
+
+			&:hover {
+				color:#62A40D;
+			}
+		}
+	}
+	.icons {
+		@include vam;
+	}
+
+	.panel-mailbox-option {
+		border-bottom:1px solid rgba(151,151,151,.2);
+		margin-bottom:20px;
+		padding-bottom:21px;
+		&:last-child {
+			border-bottom:none;
+		}
+	}
+	.panelsubLinks {
+		padding-top:20px;
+		display:block;
+		&.collapse {
+			display:none;
+		}
+
+		&:last-child {
+			border-bottom:none;
+		}
+		ul {
+			li {
+				a {
+					padding-left:42px;
+					font-size:14px;
+					letter-spacing: 1px;
+					color:#666666;
+					line-height: 1;
+					padding-top:10px;
+					padding-bottom:10px;
+					padding-right:18px;
+					position:relative;
+					display: block;
+					border-left:2px solid #fff;
+					span.badge {
+						float:right;
+						background:#E7EAE9;
+						letter-spacing: .93px;
+						color:#515151;
+						padding:4px 12px;
+						font-size:13px;
+						font-weight:400;
+						margin-top:-3px;
+					}
+					&.active {
+						background:#FAFAFA;
+						border-left:2px solid #62A40D;
+						color:#62A40D;
+					}
+					&:hover {
+						color:#62A40D;
+					}
+				}
+
+				&.addTicket {
+					padding:0 0 0 0;
+					border-radius:0;
+					a {
+						border-radius:0;
+					}
+				}
+			}
+		}
+	}
+	.addTicket {
+
+		margin-top:5px;
+		a {
+			border-radius:3px;
+			color:$maincolor;
+			font-weight:bold;
+			font-size:16px;
+			display:block;
+			text-align:left;
+
+		}
+		i {
+			margin-right:4px;
+		}
+		span {
+			display:inline-block;
+			vertical-align: middle;
+			font-size:1em;
+		}
+	}
+	.panelSimplelinks {
+		li {
+			a {
+				font-weight:400 !important;
+			}
+		}
+	}
+}
+
+
+
+
+.addticket-sidepanel {
+
+}

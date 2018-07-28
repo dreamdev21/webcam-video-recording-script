@@ -1,0 +1,41 @@
+
+/** Helpers includes all variabls and config files **/
+@import
+	'helpers/_variables.scss',
+	'helpers/_mixins.scss',
+	'helpers/_functions.scss',
+	'helpers/_media.scss';
+ 
+/** Base includes all basic requirements for every page **/
+@import
+	'base/_colors.scss',
+	'base/_typography.scss',
+	'base/_icons.scss';
+	 /** Adding icons to the site **/
+
+/** Components includes buttons, carousel, dropdown etc.. **/
+@import
+	'components/_buttons.scss',
+	'components/_elements.scss',
+	'components/_fonts.scss',
+	'components/_table.scss';
+
+
+/** Pages style **/
+
+/** Pages style **/
+
+@import
+ 	'pages/_qfi-video.scss';
+ 	
+    
+ 	
+/** custom writter css **/
+@import
+	'main.scss';
+	/** all common styles written in main.scss **/
+
+
+
+
+

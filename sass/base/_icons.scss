@@ -1,0 +1,155 @@
+.icons{
+  display: inline-block;
+  vertical-align: middle;
+  &:before{
+    background-image:url(../images/iconsheet.svg);
+    content: "";
+  }
+  &.icons-new{
+    &:before{
+      width:28px;
+      height: 24px;
+      display: inline-block;
+      vertical-align: middle;
+      background-position: 121px -1px;
+    }
+  }
+  &.icons-light{
+    &:before{
+      width:28px;
+      height: 24px;
+      display: inline-block;
+      vertical-align: middle;
+      background-position: 171px 0px;
+    }
+  }
+  &.icons-compare{
+    &:before{
+      width:38px;
+      height: 24px;
+      display: inline-block;
+      vertical-align: middle;
+      background-position: 71px 0px;
+    }
+  }
+  &.icons-fb{
+    &:before{
+      width: 14px;
+      height: 22px;
+      display: inline-block;
+      vertical-align: middle;
+      background-position: -69px -35px;
+    }
+  }
+  &.icons-twitter{
+    &:before{
+      width: 20px;
+      height: 18px;
+      display: inline-block;
+      vertical-align: middle;
+      background-position: -34px -35px;
+    }
+  }
+  &.icons-gplus{
+    &:before{
+      width: 14px;
+      height: 14px;
+      display: inline-block;
+      vertical-align: middle;
+      background-position: 0px -38px;
+    }
+  }
+  &.icons-search-white{
+    &:before{
+      width: 17px;
+      height: 18px;
+      display: inline-block;
+      vertical-align: middle;
+      background-position: 0px -6px;
+    }
+  }
+  &.icons-search-black{
+    &:before{
+      width: 17px;
+      height: 18px;
+      display: inline-block;
+      vertical-align: middle;
+      background-position:-97px -35px;
+    }
+  }
+  &.icon-grid-3{
+    &:before{
+      width: 22px;
+      height: 22px;
+      display: inline-block;
+      vertical-align: middle;
+      background-position:-69px -63px;
+    }
+  }
+  &.icon-grid-4{
+    &:before{
+      width: 30px;
+      height: 22px;
+      display: inline-block;
+      vertical-align: middle;
+      background-position:-33px -63px;
+    }
+  }
+  &.icon-grid-6{
+    &:before{
+      width: 46px;
+      height: 22px;
+      display: inline-block;
+      vertical-align: middle;
+      background-position:-69px -63px;
+    }
+  }
+}
+
+/* Another icon sheet used*/
+.icon-feature{
+  background-image: url(../images/icon-app.png);
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+}
+.icon-toll{
+  width: 68px;
+  height: 54px;
+  background-position: 0 0;
+}
+.icon-clock{
+  width: 53px;
+  height: 53px;
+  background-position: -78px -2px;
+}
+.icon-cctv{
+  width: 62px;
+  height: 51px;
+  background-position: -141px -2px;
+}
+.icon-list{
+  width: 41px;
+  height: 51px;
+  background-position: -214px -4px;
+}
+.icon-charging{
+  width: 44px;
+  height: 53px;
+  background-position: 0px -76px;
+}
+.icon-parking-space{
+  width: 51px;
+  height: 51px;
+  background-position: -53px -74px;
+}
+.icon-cards{
+  width: 62px;
+  height: 50px;
+  background-position: -127px -79px;
+}
+.icon-gps{
+  width: 50px;
+  height: 50px;
+  background-position: -219px -79px;
+}

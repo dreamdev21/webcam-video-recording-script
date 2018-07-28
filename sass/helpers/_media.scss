@@ -1,0 +1,61 @@
+$break-smallmob: 420px;
+$break-small: 550px;
+$break-medium: 768px;
+$break-mediumlarge: 991px;
+$break-pad: 1024px;
+$break-large: 1200px;
+
+@mixin respond-to($media) {
+  @if $media == handhelds {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+  @if $media == smallmob {
+    @media only screen and (max-width: $break-smallmob) { @content; }
+  }
+  @if $media == medlarge {
+    @media only screen and (max-width: $break-mediumlarge) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-medium - 1) { @content; }
+  }
+  @else if $media == ml-screens {
+    @media only screen and (min-width: $break-medium) and (max-width: $break-mediumlarge -1) { @content; }
+  }
+  @else if $media == pad-screens {
+    @media only screen and (min-width: $break-mediumlarge) and (max-width: $break-large) { @content; }
+  }
+  @else if $media == small-min {
+    @media only screen and (min-width: $break-small) { @content; }
+  }
+  @else if $media == pad-min {
+    @media only screen and (min-width: $break-medium) { @content; }
+  }
+  @else if $media == ml-min {
+    @media only screen and (min-width: $break-mediumlarge) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: $break-large) { @content; }
+  }
+
+  @else if $media == wide-max {
+    @media only screen and (max-width: $break-large) { @content; }
+  }
+
+  @else if $media == mediumlarsm {
+    @media only screen and (max-width: $break-medium - 1) { @content; }
+  }
+}
+
+
+
+
+
+//   @include respond-to(handhelds) { width: 100% ;} max-width:550px
+//   @include respond-to(medium-screens) { width: 125px; } min-width: 551px to max-width:767px
+//   @include respond-to(ml-screens) { float: none; } 768px - 990px
+//   @include respond-to(pad-screens) { float: none; } 991px - 1200px
+//   @include respond-to(small-min) { float: none; } 550 --
+//   @include respond-to(ml-min) { float: none; } 768 --
+//   @include respond-to(pad-min) { float: none; } 991 --
+//   @include respond-to(wide-screens) { float: none; } 1200 ---
+//   @include respond-to(wide-max) { float: none; } max-width 1200 ---

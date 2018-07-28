@@ -1,0 +1,79 @@
+.form-block{
+	width:100%;
+	float:left;
+	.form-fields{
+		width:100%;
+		float:left;
+		position: relative;
+		margin-bottom: 30px;
+		@media screen and (max-width: 550px){
+			margin-bottom: 20px;
+		}
+		.text-field{
+			width:100%;
+			float:left;
+			background:#ffffff;
+			border:1px solid #e5e5e5;
+			border-radius:4px;
+			width:100%;
+			height:50px;
+			padding:0 14px;
+			font-weight: 300;
+			color:#111922;
+			transition: all ease .3s;
+			&:focus{
+			border:1px solid #636be4;
+			}
+		}
+		.placeholder-cls{
+			position: absolute;
+			top: 12px;
+			left:14px;
+			font-weight: 300;
+			@include remy(17);
+			color:rgba(17,24,34,0.6);
+			letter-spacing:0;
+			text-align:left;
+			margin:0;
+		}
+	    input:placeholder-shown + label,textarea:placeholder-shown + label, textarea:placeholder-shown + grammarly-btn + label {
+	      transform: none;
+	      margin: 0;
+	      pointer-events: none;
+	      transition: all 0.2s ease;
+	      background:#fff;
+	    }
+	    textarea.text-field{
+	      resize: none;
+	      height: 103px;
+	      padding-top: 15px;
+	    }
+	    input:focus + label + .line-field, input:not(:placeholder-shown) + label + .line-field,
+	    textarea:focus + label + .line-field, textarea:not(:placeholder-shown) + label + .line-field
+	    {
+	      width:100%;
+	    }
+
+	    input:not(:placeholder-shown) + label, input:focus + label,textarea:not(:placeholder-shown) + label, textarea:focus + label,
+	    textarea:focus + grammarly-btn + label , input:focus + label,textarea:not(:placeholder-shown) + grammarly-btn + label
+	     {
+	        transform: translate(0,-23px);
+	        cursor: pointer;
+	        color:rgba(96,104,221,1);
+	        background:#fff;
+	    }
+	}
+}
+
+.submit-form{
+	width: 100%;
+    float: left;
+    text-align: right;
+    padding-right: 6px;
+    padding-top: 10px;
+	.more-option{
+		border:none;
+		background:#fff;
+		float:right;
+	}
+}
