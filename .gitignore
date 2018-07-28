@@ -1,0 +1,13 @@
+# Node
+node_modules
+
+# bower
+bower_components
+
+npm-debug.log
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
