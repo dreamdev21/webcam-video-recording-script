@@ -449,6 +449,7 @@ h2 {
       position: relative;
       overflow: hidden; }
       .qfi-video-recorder .video-outr .video-section .video-inner .start-button {
+        z-index: 999;
         position: absolute;
         width: 100%;
         bottom: 0;
