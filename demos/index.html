@@ -7,12 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
     <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
     <script src="/MediaStreamRecorder.js"></script>
     <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="js/timer.jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.7/sweetalert2.all.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
 </head>
 
 <body class="qfi-video-recorder">
@@ -22,7 +25,7 @@
         <div class="video-section">
             <div class="video-inner"  id="videos-container">
 
-                <div class="timer-sec"> <span class="timer-icon"> <span> </span> </span> <span id="t" class="badge">00:00</span>
+                <div class="timer-sec"> <span class="timer-icon" > <span id = "recording-state" > </span> </span> <span id="t" class="badge">00:00</span>
                 </div>
 
 
@@ -35,7 +38,7 @@
                         </button>
                     </div>
                     <div class="stop-recorder">
-                        <ul>
+                        <ul style="display: inline-flex;">
                             <li class="refresh-btn">
                                 <a href="javascript:;">
                                         <span class="video-icon">
@@ -47,6 +50,12 @@
                                         <span class="video-icon">
                                         <img src="images/pause.png" alt="" />
                                         </span> Pause</a>
+                            </li>
+                            <li id="resume-recording">
+                                <a href="javascript:;">
+                                        <span class="video-icon">
+                                        <img src="images/stop.png" alt="" />
+                                        </span> Resume</a>
                             </li>
                             <li id="stop-recording">
                                 <a href="javascript:;">
@@ -100,11 +109,12 @@
             previewMedia(stream);
             return true;
         }, function() {
-            swal({
-                type: 'error',
-                title: 'Oops...',
-                text: 'Webcam is not available!',
-            });
+            // swal({
+            //     type: 'error',
+            //     title: 'Oops...',
+            //     text: 'Webcam is not available!',
+            // });
+            toastr.error('Webcam is not available!');
             return false;
         });
     }
@@ -132,9 +142,13 @@
         console.log('start button clicked');
         // this.disabled = true;
         // if(!detectCamera()) return false;
+        toastr.success('New recording started.');
         $(".start-recoder").addClass("hide");
         $(".stop-recorder").addClass("show");
+        $('#recording-state').addClass('animate-me');
+        w3.hide("#resume-recording");
         captureUserMedia(mediaConstraints, onMediaSuccess, onMediaError);
+        $('#t').timer('remove');
         $("#t").timer({
             action: 'start',
             seconds: 0,
@@ -148,10 +162,10 @@
         $("#t").timer('pause');
         mediaRecorder.stop();
         // mediaRecorder.stream.stop();
-
-        $(".start-recoder").addClass("show");
-        $(".stop-recorder").addClass("hide");
-
+        toastr.success('Record stopped. You can submit recorded video.');
+        $('#recording-state').removeClass('animate-me');
+        $(".start-recoder").removeClass("hide");
+        $(".stop-recorder").removeClass("show");
 
         // document.querySelector('#pause-recording').disabled = true;
         // document.querySelector('#start-recording').disabled = false;
@@ -161,19 +175,27 @@
         // this.disabled = true;
         mediaRecorder.pause();
         $("#t").timer('pause');
-
+        $('#recording-state').removeClass('animate-me');
+        w3.show("#resume-recording");
+        w3.hide("#pause-recording");
+        toastr.info('Record paused!');
         // document.querySelector('#resume-recording').disabled = false;
     };
 
-    // document.querySelector('#resume-recording').onclick = function() {
-    //     // this.disabled = true;
-    //     mediaRecorder.resume();
-    //
-    //     document.querySelector('#pause-recording').disabled = false;
-    // };
+    document.querySelector('#resume-recording').onclick = function() {
+        // this.disabled = true;
+        mediaRecorder.resume();
+        $('#recording-state').addClass('animate-me');
+        w3.hide("#resume-recording");
+        w3.show("#pause-recording");
+        toastr.success('Record restarted!');
+        $("#t").timer('resume');
+        // document.querySelector('#pause-recording').disabled = false;
+    };
 
     $("#save-recording").click(function() {
         mediaRecorder.save();
+
         $("#t").timer('pause');
         swal(
             'Done!',
