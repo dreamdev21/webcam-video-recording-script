@@ -440,7 +440,7 @@ h2 {
           right: 0;
           margin: auto; }
     .qfi-video-recorder .video-outr .video-section .video-inner {
-      background-image: url("../images/video-img0.png");
+      /*background-image: url("../images/video-img.png");*/
       background-repeat: no-repeat;
       background-color: #006696;
       background-position: center 0;
